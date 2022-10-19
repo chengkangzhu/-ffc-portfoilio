@@ -1,0 +1,305 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;;
+    color: rgb(240, 240, 240);
+  }
+  
+  /* header section */
+  #navbar {
+    background-color: #BE3144;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+  
+    #nav-links {
+        list-style-type: none;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    
+        .nav-link {
+            font-size: 2.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 16px 30px;
+            color:rgb(240, 240, 240);
+  
+            &:hover {
+                background-color:#45567D;
+            }
+        }
+    }
+  }
+  
+  
+  /* welcome section */
+  #welcome-section {
+    margin-top: 64px;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: linear-gradient(52deg, rgba(62,62,62,1) 0%, rgba(32,32,32,1) 100%);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+
+    .name {
+        font-size: 6rem;
+    }
+    
+    .profession {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 200;
+        font-style: italic;
+        color:RGB(190, 49, 68);
+    }
+  
+  }
+  
+  
+  /* project-section */
+  #projects {
+    width: 100%;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#45567D;
+  
+    .project-h2 {
+        text-align: center;
+        display: inline-block;
+        font-size: 4.8rem;
+        margin: 80px 0;
+        border-bottom: 3px solid white;
+        }
+
+    .project-tile-wrapper{
+        display: grid;
+        max-width: 100vw;
+        grid-template-columns: auto auto auto;
+        grid-auto-rows: auto;
+        grid-gap: 50px;
+        justify-content: center;
+
+        .project-tile {
+            max-width: 390px;
+            max-height: 400px;
+            color: rgb(240,240,240);
+            text-decoration: none;
+            background-color: white;
+
+            .project-img {
+                width: 100%;
+                height: calc(100% - 55px);
+                display: block;
+                object-fit: cover;
+            }
+
+            .project-name {
+                width: 100%;
+                display: block;
+                font-size: 2rem;
+                line-height: 55px;
+                text-align: center;
+                background-color: #303841;
+
+                .code {
+                    color: #303841;
+                    transition: color .5s ease-out;
+                }
+            }
+
+            &:hover .code {
+                color: orange;
+            }
+
+        }
+    }
+
+    .btn-div{
+        display: flex;
+        justify-content: center; 
+        border-radius: 2px;
+        margin: 60px auto ;
+  
+        #profile-link{
+            background-color: #303841;
+            font-size: 2rem;
+            padding: 15px 0 15px 20px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .right-angle {
+            padding: 0 20px 0 15px;
+        }
+    }
+  
+  }
+
+  
+  /* contact section */
+  #contact-section {
+    background-color: #303841;
+    width: 100%;
+    height: 86vh;
+    display:flex;
+    flex-direction: column;
+    justify-content : center;
+    align-items: center;
+    
+    .contact-h2 {
+        font-size: 6rem;
+        font-weight: 600;
+        text-align: center;
+  }
+    
+    .contact-question {
+        font-size: 2.2rem;
+        font-weight: 200;
+        font-style: italic;
+        margin-bottom: 40px;
+    }
+    
+    #contact-links {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 30px;
+        gap: 35px;
+
+                
+        .contact-link  {
+            font-size: 2.2rem;
+            text-decoration: none;
+            color: rgb(240,240,240);
+
+            .ffc-icon{
+                color: inherit;
+            }
+        }
+    }
+    
+
+  }
+  
+  
+  
+  /* footer */
+  #footer {
+    width: 100%;
+    height:  80px;
+    background-color: #303841;
+    border-top: 4px solid #BE3144;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    align-items:center;
+    font-weight: 400px;
+    color:rgb(240,240,240);
+  }
+  
+  
+    @media (max-width: 1240px){
+        #projects .project-tile-wrapper{
+        grid-template-columns: auto auto ;
+        }
+    }
+
+    @media (max-width: 900px){
+        #projects .project-tile-wrapper{
+    grid-template-columns: auto ;
+    }
+    }
+  
+    @media (max-width: 1000px){
+  
+    #footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    }
+
+  //mobile 
+    @media (max-width: 480px){  
+        
+        #navbar {
+            justify-content: center ;
+
+            #nav-links {
+                .nav-link{
+                    font-size:2rem;
+                }
+            }
+        }
+
+        #welcome-section {
+            .name {
+                font-size:4.5rem;
+            }
+
+            .profession {
+                font-size: 2.8rem
+            }
+        }
+
+        #projects {
+            padding: 0 15px;
+
+            .project-h2 {
+                font-size: 3rem;
+                border:none;
+            }
+
+            .project-tile-wrapper {
+                .project-tile {
+                    .project-name {
+                    font-size: 1.6rem ;
+                }
+                }
+                
+            }
+
+            .btn-div {
+                #profile-link {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        #contact-section {
+            height: 82vh;
+            .contact-h2 {
+                font-size:3.4rem;
+            }
+
+            .contact-question{
+                font-size:1.8rem;
+            }
+
+            #contact-links {
+                .contact-link {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+     }
+  
